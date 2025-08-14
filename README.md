@@ -7,6 +7,15 @@ This project contains two applications:
 
 Both projects are configured to run with Docker using `docker-compose`.
 
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone git@github.com:wporta/secure-document-link-generator.git
+cd secure-document-link-generator
+```
+
 ---
 
 ## Executing the projects with Docker Compose
