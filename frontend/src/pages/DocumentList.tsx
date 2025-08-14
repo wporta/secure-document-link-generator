@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE } from '../utils/index';
 
 export default function DocumentList() {
-  const API_BASE = 'http://localhost:3000/api';
-
   const [links, setLinks] = useState<{ [doc: string]: string }>({});
   const navigate = useNavigate();
 
@@ -32,10 +31,10 @@ export default function DocumentList() {
     }
   };
 
-  const handleClick = (link: string, documentName: string) => {
+  const handleClick = (link: string) => {
     const parts = link.split('/');
     const token = parts[parts.length - 1];
-    navigate(`/docs/view/${token}`, { state: { documentName } });
+    navigate(`/docs/view/${token}`, { state: { token } });
   };
 
   return (
@@ -57,7 +56,7 @@ export default function DocumentList() {
                   rel="noreferrer"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleClick(links[doc], doc);
+                    handleClick(links[doc]);
                   }}
                 >
                   {links[doc]}
