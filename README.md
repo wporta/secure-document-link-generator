@@ -23,7 +23,7 @@ cd secure-document-link-generator
 Build and start the containers:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Open your browser and visit the frontend:
@@ -39,7 +39,7 @@ http://localhost:5173
 To stop and remove containers:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ---
